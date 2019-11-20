@@ -3,13 +3,5 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-      <servlet-name>HelloWorld</servlet-name>
-      <servlet-class>pl.ademianiuk.servletapp.App</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>HelloWorld</servlet-name>
-      <url-pattern>/App</url-pattern>
-  </servlet-mapping>
+  <display-name>TrussCalucator</display-name>
 </web-app>
