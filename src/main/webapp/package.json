@@ -1,0 +1,28 @@
+{
+  "name": "trusscalculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrian19lb/TrussCalculator.git"
+  },
+  "author": "adrian19lb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrian19lb/TrussCalculator/issues"
+  },
+  "homepage": "https://github.com/adrian19lb/TrussCalculator#readme"
+}
