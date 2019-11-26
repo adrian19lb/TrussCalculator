@@ -10,6 +10,9 @@ todo/
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# JS
+/**/node_modules
+
 # Package Files #
 *.jar
 *.war
