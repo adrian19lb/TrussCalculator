@@ -18,6 +18,9 @@ describe('BarTest', function() {
 
            let orthogonalBar = new Bar(new Node(0, 4), new Node(1, 4));
            assert.equal(orthogonalBar.linearFunction, 'y = 4')
+
+           let verticalBar = new Bar(new Node(2, 0), new Node(2, 1));
+           assert.equal(verticalBar.linearFunction, 'x = 2');
        });
    });
 });
