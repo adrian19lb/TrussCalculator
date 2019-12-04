@@ -18,9 +18,17 @@ describe('BarTest', function() {
 
            let orthogonalBar = new Bar(new Node(0, 4), new Node(1, 4));
            assert.equal(orthogonalBar.linearFunction, 'y = 4')
+           assert.equal(orthogonalBar.angle, 0);
 
            let verticalBar = new Bar(new Node(2, 0), new Node(2, 1));
            assert.equal(verticalBar.linearFunction, 'x = 2');
+           assert.equal(verticalBar.angle, -90);
+       });
+   });
+   describe('#length()', function() {
+       it('bar length evaluation from nodes coordinations', function() {
+            let bar = new Bar(new Node(1, 1), new Node(2, 2));
+            assert.equal(bar.length, 1.414);
        });
    });
 });

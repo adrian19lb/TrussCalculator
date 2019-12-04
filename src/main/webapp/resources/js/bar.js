@@ -23,4 +23,18 @@ Object.defineProperty(Bar.prototype, 'linearFunction', {
     },
 });
 
+Object.defineProperty(Bar.prototype, 'length', {
+    set : undefined,
+    get() {
+        return Math.sqrt(Math.pow(this.end.position.x - this.begin.position.x, 2) + Math.pow(this.end.position.y - this.begin.position.y, 2)).toFixed(3);
+    }
+
+});
+
+Object.defineProperty(Bar.prototype, 'angle', {
+    set : undefined,
+    get() {
+        return Math.atan(this.mathFunction.a) * 180/Math.PI;
+    }
+});
 exports.Bar = Bar;
