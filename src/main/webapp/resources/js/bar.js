@@ -5,9 +5,9 @@ function Bar(begin, end) {
     this.begin = begin;
     this.end = end;
     this.toVector2 = end.position.subtract(begin.position);
-    this.mathFunction = new LinearFunction(begin.position, end.position);
-    Object.freeze(this.mathFunction);
-    Object.seal(this.mathFunction);
+    this.toLinearFunction = new LinearFunction(begin.position, end.position);
+    Object.freeze(this.toLinearFunction);
+    Object.seal(this.toLinearFunction);
     throwExceptionIfNodesOverlapped.call(this);
 }
 
@@ -16,12 +16,6 @@ function throwExceptionIfNodesOverlapped() {
         throw 'given nodes could not overlap';
     }
 }
-
-Object.defineProperty(Bar.prototype, 'linearFunction', {
-    get() {
-        return this.mathFunction.getFormula();
-    },
-});
 
 Object.defineProperty(Bar.prototype, 'length', {
     set : undefined,
@@ -34,7 +28,7 @@ Object.defineProperty(Bar.prototype, 'length', {
 Object.defineProperty(Bar.prototype, 'angle', {
     set : undefined,
     get() {
-        return Math.atan(this.mathFunction.a) * 180/Math.PI;
+        return Math.atan(this.toLinearFunction.a) * 180/Math.PI;
     }
 });
 exports.Bar = Bar;

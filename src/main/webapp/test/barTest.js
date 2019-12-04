@@ -9,19 +9,19 @@ describe('BarTest', function() {
            chai.expect(() => new Bar(new Node(0,0), new Node(0,0))).to.throw('given nodes could not overlap');   
        });
    });
-   describe('#linearFunction()', function() {
+   describe('#formula', function() {
        it('bar should be representation of linear function', function() {
            let bar = new Bar(new Node(0, 2*0), new Node(3, 2*3)); //y = 2x
            let collidableBar = new Bar(new Node(0, -2*0 + 6), new Node(3, -2*3 + 6)); //y = -2x + 6
-           assert.equal(bar.linearFunction, 'y = 2x');
-           assert.equal(collidableBar.linearFunction, 'y = -2x + 6');
+           assert.equal(bar.toLinearFunction.formula, 'y = 2x');
+           assert.equal(collidableBar.toLinearFunction.formula, 'y = -2x + 6');
 
            let orthogonalBar = new Bar(new Node(0, 4), new Node(1, 4));
-           assert.equal(orthogonalBar.linearFunction, 'y = 4')
+           assert.equal(orthogonalBar.toLinearFunction.formula, 'y = 4')
            assert.equal(orthogonalBar.angle, 0);
 
            let verticalBar = new Bar(new Node(2, 0), new Node(2, 1));
-           assert.equal(verticalBar.linearFunction, 'x = 2');
+           assert.equal(verticalBar.toLinearFunction.formula, 'x = 2');
            assert.equal(verticalBar.angle, -90);
        });
    });
@@ -31,4 +31,11 @@ describe('BarTest', function() {
             assert.equal(bar.length, 1.414);
        });
    });
+   describe('#vector()', function() {
+        it('should return subtraction of end begin node vector', function() {
+            
+        });
+           
+   });
+   
 });
