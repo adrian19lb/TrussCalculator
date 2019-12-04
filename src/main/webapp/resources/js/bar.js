@@ -4,7 +4,7 @@ var LinearFunction = require('./linearFunction.js').LinearFunction;
 function Bar(begin, end) {
     this.begin = begin;
     this.end = end;
-    this.mathFunction = new LinearFunction(begin, end);
+    this.mathFunction = new LinearFunction(begin.position, end.position);
     Object.freeze(this.mathFunction);
     Object.seal(this.mathFunction);
     throwExceptionIfNodesOverlapped.call(this);
