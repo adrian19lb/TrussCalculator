@@ -3,7 +3,7 @@ var chai = require('chai');
 var Node = require('../resources/js/node.js').Node;
 var Bar = require('../resources/js/bar.js').Bar;
 
-describe('BarTest', function() {
+describe('Bar', function() {
    describe('#constructor()', function() {
        it('bar nodes could not overlap', function() {
            chai.expect(() => new Bar(new Node(0,0), new Node(0,0))).to.throw('given nodes could not overlap');   
