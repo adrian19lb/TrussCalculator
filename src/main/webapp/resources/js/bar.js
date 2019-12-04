@@ -20,7 +20,7 @@ function throwExceptionIfNodesOverlapped() {
 Object.defineProperty(Bar.prototype, 'length', {
     set : undefined,
     get() {
-        return Math.sqrt(Math.pow(this.end.position.x - this.begin.position.x, 2) + Math.pow(this.end.position.y - this.begin.position.y, 2)).toFixed(3);
+        return this.toVector2.magnitude.toFixed(3);
     }
 
 });
