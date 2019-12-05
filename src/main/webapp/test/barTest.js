@@ -31,11 +31,15 @@ describe('Bar', function() {
             assert.equal(bar.length, 1.414);
        });
    });
-   describe('#vector()', function() {
-        it('should return subtraction of end begin node vector', function() {
+   describe('#intersect()', function() {
+        it('should return true if bar intersect with another, otherwise return false', function() {
+            let bar = new Bar(new Node(2, 4), new Node(6, 7));
+            let collidableBar = new Bar(new Node(6,4), new Node(2, 7));
+            let noCollidableBar = new Bar(new Node(2, 1), new Node(6,1));
             
+            assert.deepEqual(bar.intersect(collidableBar), true);
+            assert.deepEqual(bar.intersect(noCollidableBar), false);
         });
-           
    });
    
 });
