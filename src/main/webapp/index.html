@@ -4,28 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <title>TrussCalculator</title>
-        <script charset="utf-8" type="text/javascript">
-            function draw() {
-                const canvas = document.getElementById('canvas');
-                canvas.addEventListener('mousemove', function(event) {
-                    getCursorGlobalPosition(canvas, event);    
-                });
-            }
-
-            function getCursorGlobalPosition(canvas, event) {
-                let ctx = canvas.getContext('2d');
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                let canvasBoundingBox = canvas.getBoundingClientRect();
-                const x = event.clientX - canvasBoundingBox.left;
-                const y = event.clientY - canvasBoundingBox.top;
-                ctx.fillText("X: " + x + "  Y: " + y, 20, 20);
-            }
-        </script> 
+        <script src="/TrussCalculator/resources/js/stage.js" charset="utf-8"></script> 
         <style type="text/css" media="screen">
             canvas { border: 1px solid black; }
         </style>
     </head>
-    <body onload="draw();">
+    <body>
         <canvas id="canvas" width="800" height="400"></canvas>
     </body>
 </html>
