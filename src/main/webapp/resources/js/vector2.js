@@ -30,4 +30,4 @@ Object.defineProperty(Vector2.prototype, 'magnitude', {
     }
 })
 
-exports.Vector2 = Vector2;
+export { Vector2 }
