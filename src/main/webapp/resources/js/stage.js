@@ -1,12 +1,4 @@
-import { proxyFactory, handler } from './changeNotifier.js';
-
-function getCursorGlobalPosition(event) {
-    let canvasBoundingBox = this._canvas.getBoundingClientRect();
-    const mouseX = event.clientX - canvasBoundingBox.left;
-    const mouseY = event.clientY - canvasBoundingBox.top;
-    
-    return { x : mouseX, y : mouseY };
-}
+import * as mouse from './mouse.js'
 
 function draw() {
     let ctx = this._canvas.getContext('2d');
@@ -26,12 +18,7 @@ export default class Stage {
     constructor(htmlCanvasId) {
         this._canvas = document.getElementById(htmlCanvasId);
         this._nodes = [];
-        this._chanegeNotifier = proxyFactory.create(this._nodes, handler);
-        this.mouse = Object.create(Object.prototype);
-        this._canvas.addEventListener('mousemove', (event) => {
-            this.mouse = getCursorGlobalPosition.call(this, event);
-            this._chanegeNotifier.mouse = this.mouse;
-        });
+        this._mouseEventNotifier = new mouse.EventNotifier(this);
     }
     
     show() {
@@ -51,4 +38,7 @@ export default class Stage {
         this._nodes.push(node);
     }
 
+    getChildren() {
+        return this._nodes;
+    }
 };
